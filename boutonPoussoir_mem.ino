@@ -5,13 +5,10 @@ int currentState = 0;
 int previousState = 0;
 int lampState = 0;
 
-void Inter();
-
 void setup() {
   // put your setup code here, to run once:
   pinMode(PIN_BP, INPUT);
   pinMode(PIN_L, OUTPUT);
-  //attachInterrupt(digitalPinToInterrupt(PIN_BP), Inter, RISING);
 }
 
 void loop() {
@@ -24,10 +21,4 @@ void loop() {
   }
 
   previousState = currentState;
-}
-
-void Inter()
-{
-  lampState = !lampState;
-  digitalWrite(PIN_L, lampState);
 }
